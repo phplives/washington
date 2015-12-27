@@ -18,7 +18,7 @@ $(".ajax_link").click(function(){
 	
 	var url = 	ServerSiteUrl+'webservices/login';
 	$("#submit-login-form").submit(function(e) {
-			alert(url);
+			
 		 $.ajax({
 			   type: "POST",
 			   url: url,
@@ -26,18 +26,15 @@ $(".ajax_link").click(function(){
 			   data: $("#submit-login-form").serialize(), // serializes the form's elements.
 			   success: function(data)
 			   {
+				alert(data);
 				  if(data.message == 'success'){
 						var id	=	data.id;	
 						location.href="main.html?id:"+id+"&page=dashboard";
 				  }else{
 					alert(data.message);
 				  } 
-			   },
-			   error: function(xhr, textStatus, error){
-					  alert(xhr.statusText);
-					  alert(textStatus);
-					  alert(error);
-				  }
+			   }
+			  
 			 }); 
 
 		e.preventDefault(); // avoid to execute the actual submit of the form.
