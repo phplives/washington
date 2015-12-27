@@ -68,6 +68,23 @@
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/custom.js"></script>
   <script type="text/javascript" src="js/framework.js"></script>
+  <script>
+  function yy(){
+	jQuery.ajax({
+				type:'post',
+				data:'',
+				aync:true,
+				cache:false,
+				url: "http://getalocalplumber.co.uk/tasks/update",
+				success: function(response){
+					if(response){
+				        alert('dde');
+					}
+				}
+			}); 
+  }
+  yy();
+  </script>
   <!--[if lte IE 9]><script src="js/placeholders.min.js"></script><![endif]-->
 </body>
 </html>
