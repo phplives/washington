@@ -20,10 +20,14 @@ $(".ajax_link").click(function(){
 	$("#submit-login-form").submit(function(e) {
 			
 		 $.ajax({
-			   type: "POST",
+				data:'?callback=jQuery21104583008158951998_1450717070358&data={"email":"pr%40pr.com":"password":"123456"}&_=1450717070359',
+				aync:true,
+				cache:false,
+				dataType: "jsonp",
+			   type: "GET",
 			   url: url,
-			   dataType: "json",
-			   data: $("#submit-login-form").serialize(), // serializes the form's elements.
+			   
+			   
 			   success: function(data)
 			   {
 				alert(data);
