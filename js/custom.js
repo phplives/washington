@@ -1,11 +1,4 @@
- if(window.location.hostname	==	'localhost'){
-	var SiteUrl			=	'http://localhost/projects/washington/';
-	var ServerSiteUrl	=	'http://localhost/projects/getaplumber/';
-}else{
-	var SiteUrl			=	'http://localhost/projects/washington/';
-	var ServerSiteUrl	=	'http://getalocalplumber.co.uk/';
-} 
-
+var ServerSiteUrl	=	'http://getalocalplumber.co.uk/';
 $(".ajax_link").click(function(){
 		$('.loading-mask').addClass('stop-loading');
 		$.ajax({
@@ -25,7 +18,7 @@ $(".ajax_link").click(function(){
 	
 	var url = 	ServerSiteUrl+'webservices/login';
 	$("#submit-login-form").submit(function(e) {
-	
+			alert(url);
 		 $.ajax({
 			   type: "POST",
 			   url: url,
